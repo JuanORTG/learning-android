@@ -1,15 +1,14 @@
-import { Text, View } from "react-native";
+import React,{ useState }from'react';
+import Login from '@/src/screens/Login';
+import Register from '@/src/screens/Register';
+import Splash from '../src/screens/SplashScreen';
 
 export default function Index() {
-  return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Hola</Text>
-    </View>
+
+  const[ showSplash, setShowSplash]= useState(true);
+  if (showSplash){
+    return <Splash onfinish={() => setShowSplash(false)} />;
+  }
+  return ( <Register />
   );
 }
